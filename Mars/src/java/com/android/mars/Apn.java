@@ -1,4 +1,3 @@
-
 package com.android.mars;
 
 import android.content.Context;

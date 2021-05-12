@@ -27,6 +27,7 @@ public class Receiver extends BroadcastReceiver {
     private static final String TAG = "MarsReceiver";
 
     private Apn mApn = null;
+    private Controller mController = null;
 
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -40,6 +41,8 @@ public class Receiver extends BroadcastReceiver {
         Log.d(TAG, action);
 
         mApn = new Apn(context);
-        mApn.start();
+        mController = new Controller(mApn);
+        //mApn.start();
+        mController.start();
     }
 }

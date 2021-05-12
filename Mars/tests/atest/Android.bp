@@ -1,0 +1,40 @@
+//package {
+//    default_applicable_licenses: ["default_applicable_license"],
+//}
+
+android_test {
+    name: "MarsTests",
+
+    srcs: ["**/*.java"],
+
+    libs: [
+        "android.test.base",
+        "android.test.mock",
+        "android.test.runner",
+        "ims-common",
+        //"unsupportedappusage",
+    ],
+
+    platform_apis: true,
+    certificate: "platform",
+
+    instrumentation_for: "Mars",
+
+    static_libs: [
+        "androidx.test.rules",
+        "frameworks-base-testutils",
+        "guava",
+        "mockito-target-minus-junit4",
+        "net-tests-utils",
+        "platform-test-annotations",
+        "services.core",
+        "services.net",
+        "telephony-common",
+        "truth-prebuilt",
+        "testables",
+    ],
+
+    test_suites: [
+        "device-tests",
+    ],
+}

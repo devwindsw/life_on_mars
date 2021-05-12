@@ -35,7 +35,7 @@ android_app {
 
     srcs: [
         //":framework-telephony-common-shared-srcs",
-        "src/**/*.java",
+        "src/java/**/*.java",
     ],
 
     jarjar_rules: ":jarjar-rules-shared",
@@ -61,4 +61,29 @@ android_app {
     //proto: {
     //    type: "lite",
     //},
+}
+
+cc_library_headers {
+    name: "mars_headers",
+    //vendor: true,
+    export_include_dirs: ["src/cpp/include"],
+}
+
+cc_library {
+    name: "libmars",
+
+    srcs: [
+        "src/cpp/libmars/**/*.cpp",
+    ],
+
+    header_libs: ["mars_headers"],
+    export_header_lib_headers: ["mars_headers"],
+
+    cflags: [
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+    ],
+
+    //vendor: true,
 }
