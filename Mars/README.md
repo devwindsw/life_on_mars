@@ -41,6 +41,18 @@ https://android-review.googlesource.com/c/platform/platform_testing/+/1705111
   $ atest MarsTests
 ```
 
+### Reference
+We can find two test packages related to the telephony in AOSP as following:
+
+```
+FrameworksTelephonyTests under
+https://android.googlesource.com/platform/frameworks/opt/telephony/+/refs/heads/master/tests/telephonytests
+
+TeleServiceTests under
+https://android.googlesource.com/platform/packages/services/Telephony/+/refs/heads/master/tests/
+```
+
+
 ## gtest
 
 Please refer to https://source.android.com/compatibility/tests/development/native and https://github.com/google/googletest.
