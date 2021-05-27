@@ -65,3 +65,21 @@ However, the tests should be located under /data/nativetest64/gtest_tests in adv
             logger().debug('Skipping %s', test_dir)
             continue
 ```
+
+### Generating mock classes
+
+Though it's not maintained now, gmock_gen.py, under https://github.com/google/googletest/tree/master/googlemock/scripts/generator, can be used to make it easy to generate mock classes.
+
+```
+cd 
+mkdir gtest
+cd gtest
+
+git clone https://github.com/google/googletest.git
+export PATH=$PATH:~/gtest/googletest/googlemock/scripts/generator/
+
+cd ~/Mars
+
+find ./src/cpp -name *.h | xargs -I % sh -c 'echo %; export TDIR=`dirname %`; export TFILE=`basename %`; mkdir -p tests/gtest/mock/$TDIR; gmock_gen.py % > tests/gtest/mock/${TDIR}/Mock${TFILE}'
+
+```
