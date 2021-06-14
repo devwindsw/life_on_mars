@@ -15,7 +15,7 @@ sudo tune2fs -O encrypt /dev/sdb1
 
 sudo apt-get install fscrypt libpam-fscrypt
 
-sudo vi keyinit-fix
+sudo vi /usr/share/pam-configs/keyinit-fix
 
 sudo pam-auth-update
 
