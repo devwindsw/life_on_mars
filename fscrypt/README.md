@@ -6,7 +6,7 @@ https://tlbdk.github.io/ubuntu/2018/10/22/fscrypt.html
 
 # Quick Start
 
-/dev/sdb1 and /mnt/data1/irvine shall be replaced by your own.
+/dev/sdb1 and /mnt/data1/irvine shall be replaced with your own.
 
 ```
 getconf PAGE_SIZE
